@@ -1,5 +1,5 @@
 {% set name = "dapclient" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dapclient-{{ version }}.tar.gz
-  sha256: 323d9394d3e2dc0ffd8067373c679448b4356c2e1869aa8d1ed54298017ce753
+  sha256: ba83b8c5339e51bf07ede8d043909de6513d67752853fac4f00b1c4291ba0b31
 
 build:
   noarch: python
