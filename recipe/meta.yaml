@@ -1,5 +1,6 @@
 {% set name = "dapclient" %}
 {% set version = "1.0.6" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
@@ -16,17 +17,17 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
+    - pip
     - setuptools >=45
     - setuptools-scm >=6.2
     - wheel
-    - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
+    - beautifulsoup4
     - numpy
     - requests
     - webob
-    - beautifulsoup4
 
 test:
   imports:
@@ -34,6 +35,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
