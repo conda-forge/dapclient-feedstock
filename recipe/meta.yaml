@@ -1,13 +1,14 @@
 {% set name = "dapclient" %}
-{% set version = "1.0.5" %}
+{% set version = "1.0.6" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dapclient-{{ version }}.tar.gz
-  sha256: a8bf217d31020af8467cb8462da70be0daaab55f4b72839c8264fdc5e191f369
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dapclient-{{ version }}.tar.gz
+  sha256: f38b133561009aaf9a0af5414753a2619f504fac26f3669e10a2f8db4739d70c
 
 build:
   noarch: python
@@ -16,17 +17,17 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
+    - pip
     - setuptools >=45
     - setuptools-scm >=6.2
     - wheel
-    - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
+    - beautifulsoup4
     - numpy
     - requests
     - webob
-    - beautifulsoup4
 
 test:
   imports:
@@ -34,6 +35,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
