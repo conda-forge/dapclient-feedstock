@@ -27,6 +27,7 @@ requirements:
     - beautifulsoup4
     - numpy
     - requests
+    - requests-cache
     - webob
 
 test:
