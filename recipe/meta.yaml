@@ -1,5 +1,5 @@
 {% set name = "dapclient" %}
-{% set version = "1.0.6" %}
+{% set version = "2.0.0" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dapclient-{{ version }}.tar.gz
-  sha256: f38b133561009aaf9a0af5414753a2619f504fac26f3669e10a2f8db4739d70c
+  sha256: efe166bba14561dd8031ada69266d90003354adddd6a1f53cee06096a65566d2
 
 build:
   noarch: python
@@ -27,6 +27,7 @@ requirements:
     - beautifulsoup4
     - numpy
     - requests
+    - requests-cache
     - webob
 
 test:
